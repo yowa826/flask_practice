@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="form-container">
+    <form class="form1" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/png, image/jpeg" onchange="updateFileName(this)">
+        <button type="submit">submit</button>
+    </form>
+
+    {% if img_data %}
+        <div class="image-preview">
+            <img src="data:image/png;base64,{{ img_data }}">
+        </div>
+    {% endif %}
+</div>
+
+<script>
+    function updateFileName(input) {
+        var fileName = input.files[0].name;
+        // CSSでの初期表示は不要なため、ここでは何もしない
+    }
+</script>
+
+{% endblock %}

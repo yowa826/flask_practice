@@ -1,0 +1,151 @@
+/* ブラウザ間の差を無くしつつ、paddinng（余白）をシンプルに扱うための処理。ヘッダーとの境界が分かりやすいように、bodyに背景色を指定しています。 */
+* {
+    box-sizing: border-box;
+ }
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #e6e6e6;
+ }
+
+ /* headerに余白を作る。
+    ヘッダーの横幅を、画面いっぱいの100％に設定し、paddingを使って「header内側の余白」を調整します。背景色には白を設定します。
+ */
+
+ /* FlexBoxでタイトルとナビを横並びにする。FlexBoxを使用して、headerの子要素「h1」と「nav」を横並びに配置します。
+    まず「display: flex;」を追加。
+    これでheader直下の子要素のレイアウトをコントロールできる状態になりました。
+
+    次に「align-items: center;」を追加。
+    align-itemsで子要素の縦方向の配置を決めます。
+    「center」を指定したので、子要素が「縦方向の中心」に配置されます。
+ */
+ header {
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+ }
+
+ /* 文字サイズは大きくなりすぎない方がモダンに感じやすいので「20px」にし、余白を0にします。*/
+ h1 {
+    margin: 0; padding: 0;
+    font-size: 20px;
+ }
+ /* aタグの文字色と、余計なアンダーラインを消していきます。 */
+ a {	
+    text-decoration: none;
+    color: #4b4b4b;
+ }
+ /* nav要素の外側の余白を調整する「margin」にautoを設定して、タイトルとナビゲーションが両サイドの配置になるようにしましょう。 */
+ nav {
+    margin: 0 0 0 auto;
+ }
+
+ /* まず各リスト項目の左側にある点「・」を非表示にして、無駄な余白をなくす処理をします。
+    各項目を横並びにするタメに、ここでも「FlexBox」を追加しましょう */
+ ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+ }
+ /* このままだと、横並びの項目が繋がっているので、「li」要素の余白を調整し、文字を小さくしてモダンにしましょう。*/
+ li {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+ }
+/* フォームのスタイル */
+.form1 {
+    margin-top: 100px; /* ヘッダーの高さに合わせて調整 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* 横幅を90%に設定 */
+    max-width: 1500px; /* 最大幅を1500pxに設定 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto; /* 左右中央揃え */
+}
+
+
+/* カスタムファイル入力フィールド */
+.custom-file-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.custom-file-input-wrapper input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-input-wrapper::before {
+    content: 'ファイルが選択されていません';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    color: #999;
+    pointer-events: none;
+}
+
+.custom-file-input-wrapper input[type="file"]:hover + ::before {
+    border-color: #333;
+}
+
+.custom-file-input-wrapper input[type="file"]:focus + ::before {
+    outline: none;
+    border-color: #333;
+}
+
+.form1 button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4b4b4b;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.form1 button:hover {
+    background-color: #333;
+}
+
+/* 画像プレビューのスタイル */
+.image-preview {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-preview img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: auto;
+}

@@ -1,0 +1,29 @@
+<!-- html5で推奨されている、ヘッダーであること示す「headerタグ」を書きます。 -->
+<!-- h1タグを使ってサイト名を表示。タイトルを押すと、サイトのTOPページに遷移するように、h1の中にすぐサイト名は書かず、aタグで包みましょう。 -->
+<!-- ナビゲーションメニューを入れる箱を追加します。もちろんhtml5で推奨されている、navタグを使います。 -->
+<!-- ナビメニューの項目を追加していきます。リストタグ「ul li」を使いましょう。liタグの中の文字はaタグで囲って、それぞれのページに遷移できるようにします。 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<header>
+    <h1>
+        <a href="/">RICO NOTES</a>
+    </h1>
+    <nav class="pc-nav">
+        <ul>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">COMPANY</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
