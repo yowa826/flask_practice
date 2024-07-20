@@ -1,37 +1,68 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="box1 col-md-2">
-            <h3 class="mt-5">音源の選択</h3>
-        </div>
+<div class="container-fluid min-vh-100">
+    <div class="row min-vh-100">
+      <!-- サイドバー -->
+      <div class="col-12 col-md-3 col-lg-2 bg-body-tertiary p-3 position-fixed h-100" style="top: 56px; bottom: 0;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 link-body-emphasis text-decoration-none px-3">
+          <span class="fs-5 fs-md-4 fs-lg-3">サイドバー</span>
+        </a>
         <hr>
-    </div>
-</div>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#section1" class="nav-link link-body-emphasis">
+              <span class="fs-6 fs-md-4 fs-lg-3">音源の選択</span>
+            </a>
+          </li>
+          <li>
+            <a href="#section2" class="nav-link link-body-emphasis">
+              <span class="fs-6 fs-md-4 fs-lg-3">実行</span>
+            </a>
+          </li>
+          <li>
+            <a href="#section3" class="nav-link link-body-emphasis">
+              <span class="fs-6 fs-md-4 fs-lg-3">可視化</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-<div class="container">
-    <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="box1 col-md-2">
-            <h3 class="mt-5">実行</h3>
+      <!-- 本文 -->
+      <div class="col-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 p-3" style="margin-top: 56px;">
+        <div class="container">
+            <div class="row">
+                <div id="section1" class="box1 col-md-12 col-lg-8">
+                    <h3 class="mt-5">音源の選択</h3>
+                </div>
+                <hr>
+            </div>
         </div>
-        <hr>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="box1 col-md-2">
-            <h3 class="mt-5">可視化</h3>
+        
+        <div class="container">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
         </div>
-        <hr>
+        
+        <div class="container">
+            <div class="row">
+                <div id="section2" class="box1 col-md-12 col-lg-8">
+                    <h3 class="mt-5">実行</h3>
+                </div>
+                <hr>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div id="section3" class="box1 col-md-12 col-lg-8">
+                    <h3 class="mt-5">可視化</h3>
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
 </div>
 

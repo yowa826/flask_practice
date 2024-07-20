@@ -1,0 +1,16 @@
+/* ヘッダーの背景色を変更するカスタムCSS */
+.custom-navbar {
+    background-color: #95acb4 !important; /* 任意の色コードを指定 */
+  }
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+color: #ffffff; /* 白色 */
+}
+
+/* スクロール時のオフセットを設定 */
+body {
+    scroll-padding-top: 56px; /* ヘッダーの高さに合わせて調整 */
+  }
+
+  

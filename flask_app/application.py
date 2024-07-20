@@ -45,4 +45,4 @@ def upload():
 # port=****の部分でポート番号を変更できる。
 if __name__ == '__main__':
     #'0.0.0.0'はどんな接続でも受け入れる状態
-    app.run(debug=False, host='0.0.0.0', port=8880)
+    app.run(debug=True)
